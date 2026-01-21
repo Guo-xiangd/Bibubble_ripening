@@ -1,0 +1,16 @@
+type                        6 H O N Na Cl Ti
+version                     4
+zbl                         2
+cutoff                      6 5
+use_typewise_cutoff         4.0 3
+use_typewise_cutoff_zbl     0.65
+n_max                       8 8
+basis_size                  8 8
+l_max                       6 2 1
+neuron                      50
+lambda_1                    0.0
+lambda_v                    0.1
+batch                       50000
+population                  50
+generation                  9000
+fine_tune                   nep89.txt nep89.restart
