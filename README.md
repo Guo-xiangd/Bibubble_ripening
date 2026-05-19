@@ -13,7 +13,7 @@ The following software packages and versions were used in this study:
 * **VASP** (v5.4.4)
 * **deepmd-kit** (v2.1.5)
 * **dpgen** (v0.11.0)
-* **GPUMD** *(Note: The version of GPUMD used in this work is an unpublished version, which is uploaded to [Zenodo](https://zenodo.org/uploads/20290846)*
+* **GPUMD** *(Note: The version of GPUMD used in this work is an unpublished version, which is uploaded to [Zenodo](https://zenodo.org/uploads/20290846))*
 
 ## Repository Structure
 
