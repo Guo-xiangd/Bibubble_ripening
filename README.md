@@ -4,7 +4,7 @@ This repository collects the data sets, models, molecular dynamics (MD) inputs, 
 
 ## Model Resources
 
-The NEP89 foundation model used in this work is uploaded to [Zenodo]((https://zenodo.org/uploads/20290846)).
+The NEP89 foundation model used in this work is uploaded to [Zenodo](https://zenodo.org/uploads/20290846).
 
 ## Software Environment
 
@@ -13,7 +13,7 @@ The following software packages and versions were used in this study:
 * **VASP** (v5.4.4)
 * **deepmd-kit** (v2.1.5)
 * **dpgen** (v0.11.0)
-* **GPUMD** *(Note: The version of GPUMD used in this work is an unpublished version, which is uploaded to [Zenodo]((https://zenodo.org/uploads/20290846))*
+* **GPUMD** *(Note: The version of GPUMD used in this work is an unpublished version, which is uploaded to [Zenodo](https://zenodo.org/uploads/20290846)*
 
 ## Repository Structure
 
