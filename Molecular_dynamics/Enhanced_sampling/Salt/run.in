@@ -1,0 +1,10 @@
+potential       /WORK/xuxf_work/xiangdang/gpumd/NEP/022_nep/iter000/022_nep_v2-9k/nep.txt
+
+velocity        330    
+ensemble        npt_scr 330 330 100 1.01325e-4 2.26424581 1000
+time_step       1     
+dump_thermo     1000
+dump_exyz       1000
+dump_restart    500000 
+plumed          plumed.dat 100 0    
+run             10000000
