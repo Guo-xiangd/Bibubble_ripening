@@ -18,9 +18,8 @@ The following software packages and versions were used in this study:
 
 ## Repository Structure
 
-```text
-├── datasets/          # Data sets used for training/testing
-├── models/            # Fine-tuned NEP models
-├── md_inputs/         # Molecular dynamics (MD) inputs for GPUMD
-├── analysis_tools/    # Scripts and tools for data analysis
-└── README.md          # Repository overview
+To be done
+
+## Related Publication
+
+Ion-Modulated Ostwald Ripening Dynamics of Nitrogen Nanobubble Pairs. [J. Am. Chem. Soc.](https://pubs.acs.org/doi/10.1021/jacs.6c08865?utm_source=SendGrid_ealert&utm_medium=ealert&utm_campaign=ASAP_jacsat_v0_i0)
