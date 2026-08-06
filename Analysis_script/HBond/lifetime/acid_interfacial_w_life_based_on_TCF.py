@@ -18,15 +18,15 @@ mpl.use('Agg')
 # ========================= User Configuration =========================
 CONFIG = {
     # Trajectory settings
-    "traj_path": "./data/centered_bubble1.lammpstrj",
+    "traj_path": "data/centered_bubble1.lammpstrj",
     "traj_start_time_ns": 32.0,  
     "dt_ps": 0.1,                
     
     # H3O+ ion tracking file
-    "h3o_file": "./data/h3o_ions.txt",
+    "h3o_file": "data/h3o_ions.txt",
     
     # Log folder template
-    "log_template": "./data/logs/{chunk}ns/bubble1_block{block}/log.txt",
+    "log_template": "data/logs/{chunk}ns/bubble1_block{block}/log.txt",
     "chunk_size_ns": 4.0,        
     "blocks_per_chunk": 8,       
     
@@ -123,7 +123,7 @@ class InterfacePositionCache:
             return None
             
         with open(log_path, 'r') as f:
-            m = re.search(r"界面位置:\s*([-\d\.]+)", f.read())
+            m = re.search(r"(?m)^interface_position\s*=\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)\s*$", f.read())
             if m:
                 z_int = float(m.group(1))
                 self.cache[key] = z_int

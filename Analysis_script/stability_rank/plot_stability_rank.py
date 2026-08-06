@@ -44,40 +44,40 @@ def read_simulation_data(file_path):
 SYSTEM_CONFIG = {
     '100NaOH': { # Added high concentration NaOH
         'paths': [
-            '/data/HOME_BACKUP/xiangdang/gpumd/100naoh/022_nep_v2/001/accumulated/30ns/N2Cluster_5.5.txt',
-            '/data/HOME_BACKUP/xiangdang/gpumd/100naoh/022_nep_v2/002/accumulated/30ns/N2Cluster_5.5.txt'
+            'data/100naoh/022_nep_v2/001/accumulated/30ns/N2Cluster_5.5.txt',
+            'data/100naoh/022_nep_v2/002/accumulated/30ns/N2Cluster_5.5.txt'
         ],
         'color': '#9467bd', # Purple
         'style': 'solid'
     },
     '20NaOH': {
         'paths': [
-            '/data/HOME_BACKUP/xiangdang/gpumd/20naoh/022_nep_v2/001/accumulated/30ns/N2Cluster_5.5.txt',
-            '/data/HOME_BACKUP/xiangdang/gpumd/20naoh/022_nep_v2/002/accumulated/30ns/N2Cluster_5.5.txt'
+            'data/20naoh/022_nep_v2/001/accumulated/30ns/N2Cluster_5.5.txt',
+            'data/20naoh/022_nep_v2/002/accumulated/30ns/N2Cluster_5.5.txt'
         ],
         'color': '#1f77b4',
         'style': 'solid'
     },
     '20NaCl': {
         'paths': [
-            '/data/HOME_BACKUP/xiangdang/gpumd/20nacl/022_nep_v2/iter000/9000/001/accumulated/30ns/N2Cluster_5.5.txt',
-            '/data/HOME_BACKUP/xiangdang/gpumd/20nacl/022_nep_v2/iter000/9000/002/accumulated/30ns/N2Cluster_5.5.txt',
+            'data/20nacl/022_nep_v2/iter000/9000/001/accumulated/30ns/N2Cluster_5.5.txt',
+            'data/20nacl/022_nep_v2/iter000/9000/002/accumulated/30ns/N2Cluster_5.5.txt',
         ],
         'color': '#2ca02c',
         'style': 'solid'
     },
     'purewater': {
         'paths': [
-            '/data/HOME_BACKUP/xiangdang/gpumd/purewater/iter000/nep_022_v2-9000/001/accumulated/30ns/N2Cluster_5.5.txt',
-            '/data/HOME_BACKUP/xiangdang/gpumd/purewater/iter000/nep_022_v2-9000/002/accumulated/30ns/N2Cluster_5.5.txt',
+            'data/purewater/iter000/nep_022_v2-9000/001/accumulated/30ns/N2Cluster_5.5.txt',
+            'data/purewater/iter000/nep_022_v2-9000/002/accumulated/30ns/N2Cluster_5.5.txt',
         ],
         'color': '#d62728',
         'style': 'solid'
     },
     '20HCl': {
         'paths': [
-            '/data/HOME_BACKUP/xiangdang/gpumd/20hcl/022_nep/022_nep_v2-9000/001/accumulated/30ns/N2Cluster_5.5.txt',
-            '/data/HOME_BACKUP/xiangdang/gpumd/20hcl/022_nep/022_nep_v2-9000/002/accumulated/30ns/N2Cluster_5.5.txt'
+            'data/20hcl/022_nep/022_nep_v2-9000/001/accumulated/30ns/N2Cluster_5.5.txt',
+            'data/20hcl/022_nep/022_nep_v2-9000/002/accumulated/30ns/N2Cluster_5.5.txt'
         ],
         'color': '#ff7f0e',
         'style': 'solid'

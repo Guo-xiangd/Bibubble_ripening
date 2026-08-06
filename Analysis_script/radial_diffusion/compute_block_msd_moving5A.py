@@ -46,8 +46,8 @@ R_PRIME_MAX = 6.0
 WINDOW_THICKNESS = 5.0
 SLIDE_STEP = 1.0
 
-PATH_TEMPLATE_TRAJ = "/data/HOME_BACKUP/xiangdang/gpumd/biNBs/NaCl/002/{TIME_RANGE}/COM_shift/centered_{BUBBLE_ID}.lammpstrj"
-PATH_TEMPLATE_LOG = "/data/HOME_BACKUP/xiangdang/gpumd/plot/biBNBs/salt/002_ripening/ion_distribution_for_several_timeblock/1ns_block/{TIME_RANGE}/results/{BUBBLE_ID}_block{BLOCK_NUM}/log.txt"
+PATH_TEMPLATE_TRAJ = "data/biNBs/NaCl/002/{TIME_RANGE}/COM_shift/centered_{BUBBLE_ID}.lammpstrj"
+PATH_TEMPLATE_LOG = "data/plot/biBNBs/salt/002_ripening/ion_distribution_for_several_timeblock/1ns_block/{TIME_RANGE}/results/{BUBBLE_ID}_block{BLOCK_NUM}/log.txt"
 # ======================================================
 
 
@@ -69,7 +69,7 @@ def extract_r_from_log(t_ns):
         print(f"[WARN] Missing log file: {path}; using default R_ref=11.0 A")
         return 11.0
 
-    regex = re.compile(r"界面位置:\s*([-\d.]+)")
+    regex = re.compile(r"(?m)^interface_position\s*=\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)\s*$")
     try:
         with open(path, "r", encoding="utf-8") as f:
             matches = regex.findall(f.read())

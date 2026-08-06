@@ -319,7 +319,11 @@ def main():
             # Calculate interface position
             interface_pos, mid_density = get_mid_density(bin_centers, water_density)
             interface = [interface_pos]
-            print(f"Interface position for {bubble_name} block {block_idx+1}: {interface_pos}, Mid density: {mid_density}")
+            # Emit stable, machine-readable English key-value records for downstream tools.
+            print(f"bubble={bubble_name}")
+            print(f"block_index={block_idx + 1}")
+            print(f"interface_position={interface_pos:.10g}")
+            print(f"mid_density={mid_density:.10g}")
             
             # Plot density distribution
             draw_density(

@@ -14,12 +14,12 @@ mpl.use('Agg')
 # ========================= User Configuration =========================
 CONFIG = {
     # Trajectory settings
-    "traj_path": "./data/centered_bubble1.lammpstrj",  # Path to trajectory file
+    "traj_path": "data/centered_bubble1.lammpstrj",  # Path to trajectory file
     "traj_start_time_ns": 16.0,  # Absolute start time of the trajectory (ns)
     "dt_ps": 0.1,                # Time step between frames (ps)
     
     # Log folder template (uses {chunk} and {block} as placeholders)
-    "log_template": "./data/logs/{chunk}ns/bubble1_block{block}/log.txt",
+    "log_template": "data/logs/{chunk}ns/bubble1_block{block}/log.txt",
     "chunk_size_ns": 4.0,        # Time span per chunk folder (e.g., 4.0 for 16-20ns)
     "blocks_per_chunk": 8,       # Number of blocks per chunk folder
     
@@ -76,9 +76,8 @@ class InterfacePositionCache:
             
         with open(log_path, 'r') as f:
             content = f.read()
-            # Extract interface position (assumes format "界面位置: 12.592...")
-            # Note: Update the regex if the English log file format differs
-            m = re.search(r"界面位置:\s*([-\d\.]+)", content)
+            # Extract the machine-readable English key-value record.
+            m = re.search(r"(?m)^interface_position\s*=\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)\s*$", content)
             if m:
                 z_int = float(m.group(1))
                 self.cache[key] = z_int

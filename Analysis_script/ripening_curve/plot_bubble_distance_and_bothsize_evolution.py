@@ -13,14 +13,14 @@ import os
 # (Cleaned all non-standard spaces)
 config = {
     "files": [
-        "/data/HOME_BACKUP/xiangdang/gpumd/biNBs/purewater/004/merged_plot_size_and_distance/merged_2.csv",
-        "/data/HOME_BACKUP/xiangdang/gpumd/biNBs/NaOH/002/merged_plot_size_and_distance/merged_2.csv",
-        "/data/HOME_BACKUP/xiangdang/gpumd/biNBs/NaOH/004/merged_plot_size_and_distance/merged_2.csv",
-        "/data/HOME_BACKUP/xiangdang/gpumd/biNBs/NaCl/002/merged_plot_size_and_distance/merged_2.csv",
-        "/data/HOME_BACKUP/xiangdang/gpumd/biNBs/NaCl/003/merged_plot_size_and_distance/merged_2.csv",
-        "/data/HOME_BACKUP/xiangdang/gpumd/biNBs/HCl/002/merged_plot_size_and_distance/merged_2.csv",
-        "/data/HOME_BACKUP/xiangdang/gpumd/biNBs/HCl/003/merged_plot_size_and_distance/merged_2.csv",
-        "/data/HOME_BACKUP/xiangdang/gpumd/biNBs/HCl/004/merged_plot_size_and_distance/merged_2.csv",
+        "data/biNBs/purewater/004/merged_plot_size_and_distance/merged_2.csv",
+        "data/biNBs/NaOH/002/merged_plot_size_and_distance/merged_2.csv",
+        "data/biNBs/NaOH/004/merged_plot_size_and_distance/merged_2.csv",
+        "data/biNBs/NaCl/002/merged_plot_size_and_distance/merged_2.csv",
+        "data/biNBs/NaCl/003/merged_plot_size_and_distance/merged_2.csv",
+        "data/biNBs/HCl/002/merged_plot_size_and_distance/merged_2.csv",
+        "data/biNBs/HCl/003/merged_plot_size_and_distance/merged_2.csv",
+        "data/biNBs/HCl/004/merged_plot_size_and_distance/merged_2.csv",
     ],
     "start_time_ns": [10.000, 14.000, 40.000, 8.000, 10.000, 28.000, 18.000, 32.000],
     "end_time_ns":   [64.000, 62.000, 88.000, 64.000, 66.000, 64.000, 54.000, 68.000],

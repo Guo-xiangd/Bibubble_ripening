@@ -1,4 +1,4 @@
-potential       /WORK/xuxf_work/xiangdang/gpumd/NEP/022_nep/iter000/022_nep_v2-9k/nep.txt
+potential       ../../../NEP_training/nep.txt
 
 velocity        330 seed 20250514 
 ensemble        npt_scr 330 330 100 1.01325e-4 2.26424581 1000

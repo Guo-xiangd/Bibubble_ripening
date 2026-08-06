@@ -19,7 +19,7 @@ TYPE_O = '2'
 def parse_interface_log(log_path):
     if not os.path.exists(log_path): return None
     # Updated regex to match English log format
-    pattern = re.compile(r"Interface Position:\s*(\d+\.\d+)")
+    pattern = re.compile(r"(?m)^interface_position\s*=\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)\s*$")
     try:
         with open(log_path, 'r') as f:
             content = f.read()
