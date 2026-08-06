@@ -7,7 +7,7 @@ import os
 import argparse
 
 def trj_info(u):
-    """使用MDAnalysis获取轨迹信息"""
+    """Use MDAnalysis to obtain trajectory information"""
     atom_nums = u.atoms.n_atoms
     frames = len(u.trajectory)
     return atom_nums, frames
@@ -35,14 +35,14 @@ if __name__ == '__main__':
     ion_type = args.ion_type
     time_section = args.time_section
     
-    # 离子类型与LAMMPS原子类型的映射
+    # Mapping between ion types and LAMMPS atom types
     ion_type_map = {'Na': 4, 'Cl': 5}
     atom_type = ion_type_map[ion_type]
 
     step = 1
     trj_name = trj_file.split('.')[0]
 
-    # 输出文件命名
+    # Output file naming
     out_filename = f"{ion_type}_dump{step}_{trj_name}_{findpart}_{time_section}.txt"
     ion_xyzfile = open(os.path.join(save_path, out_filename), 'w')
     ion_xyzfile.write('# %6s%16s' % ('Ions', 'MD_step'))
@@ -53,20 +53,20 @@ if __name__ == '__main__':
 
     ion_xyzfile.write('\n')
 
-    # 创建Universe对象
+    # Create the Universe object
     u = mda.Universe(os.path.join(trj_path, trj_file), format='LAMMPSDUMP')
     
-    # 获取轨迹信息
+    # Obtain trajectory information
     atom_nums, total_frames = trj_info(u)
     
-    # 计算要处理的帧范围
+    # Calculate the frame range to process
     frames_per_part = total_frames // choose_part
     start_frame = findpart * frames_per_part
     end_frame = min((findpart + 1) * frames_per_part, total_frames)
 
     print(f"Processing frames {start_frame} to {end_frame} (step={step})")
 
-    # 选择目标离子
+    # Select target ions
     ions = u.select_atoms(f'type {atom_type}')
 
     for ts in u.trajectory[start_frame:end_frame:step]:

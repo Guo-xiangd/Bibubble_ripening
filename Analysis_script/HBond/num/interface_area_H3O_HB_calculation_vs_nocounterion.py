@@ -23,7 +23,7 @@ def parse_interface_log(log_path):
         return None
     
     # Regex updated to match English output: "Interface Position: X.XX"
-    pattern = re.compile(r"Interface Position:\s*(\d+\.\d+)")
+    pattern = re.compile(r"(?m)^interface_position\s*=\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)\s*$")
     try:
         with open(log_path, 'r') as f:
             content = f.read()

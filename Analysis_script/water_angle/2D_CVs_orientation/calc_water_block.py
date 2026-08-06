@@ -13,9 +13,8 @@ from collections import defaultdict
 # ==================== Helper Functions ====================
 
 def parse_log_file(log_path):
-    """Parse Log to get interface position"""
-    # Note: Regex updated to match English output "Interface position"
-    pattern = re.compile(r"Interface position:\s*(\d+\.\d+)") 
+    """Parse the machine-readable interface position from a log file."""
+    pattern = re.compile(r"(?m)^interface_position\s*=\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)\s*$")
     if not os.path.exists(log_path): return None
     with open(log_path, 'r') as f:
         match = pattern.search(f.read())

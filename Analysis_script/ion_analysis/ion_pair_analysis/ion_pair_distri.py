@@ -42,11 +42,11 @@ from math import sqrt, acos, degrees
 # !!! Each template corresponds to an 8ns time period !!!
 # The script will read all R values in the order of this list.
 LOG_FILE_TEMPLATES = [
-    "/data/HOME_BACKUP/xiangdang/gpumd/plot/biBNBs/salt/003_ripening/ion_distribution_for_several_timeblock/1ns_block/0-8ns/results/bubble1_block{X}/log.txt",
-    "/data/HOME_BACKUP/xiangdang/gpumd/plot/biBNBs/salt/003_ripening/ion_distribution_for_several_timeblock/1ns_block/8-16ns/results/bubble1_block{X}/log.txt",
-     "/data/HOME_BACKUP/xiangdang/gpumd/plot/biBNBs/salt/003_ripening/ion_distribution_for_several_timeblock/1ns_block/16-24ns/results/bubble1_block{X}/log.txt",
-     "/data/HOME_BACKUP/xiangdang/gpumd/plot/biBNBs/salt/003_ripening/ion_distribution_for_several_timeblock/1ns_block/24-32ns/results/bubble1_block{X}/log.txt",
-     "/data/HOME_BACKUP/xiangdang/gpumd/plot/biBNBs/salt/003_ripening/ion_distribution_for_several_timeblock/1ns_block/32-40ns/results/bubble1_block{X}/log.txt",
+    "data/plot/biBNBs/salt/003_ripening/ion_distribution_for_several_timeblock/1ns_block/0-8ns/results/bubble1_block{X}/log.txt",
+    "data/plot/biBNBs/salt/003_ripening/ion_distribution_for_several_timeblock/1ns_block/8-16ns/results/bubble1_block{X}/log.txt",
+     "data/plot/biBNBs/salt/003_ripening/ion_distribution_for_several_timeblock/1ns_block/16-24ns/results/bubble1_block{X}/log.txt",
+     "data/plot/biBNBs/salt/003_ripening/ion_distribution_for_several_timeblock/1ns_block/24-32ns/results/bubble1_block{X}/log.txt",
+     "data/plot/biBNBs/salt/003_ripening/ion_distribution_for_several_timeblock/1ns_block/32-40ns/results/bubble1_block{X}/log.txt",
 ]
 
 # (Modified) Mode Data Files
@@ -103,9 +103,8 @@ def load_interface_positions(template_list, num_sub_blocks=8):
     all_interface_positions = [] # (New) Total list for all R values
     print("Reading interface positions for all time periods...")
     
-    # Regex to match floating point number after "Interface Position: "
-    # Updated to match English log format
-    regex = r"Interface Position:\s*([-\d.]+)"
+    # Match the machine-readable English key-value record.
+    regex = r"(?m)^interface_position\s*=\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)\s*$"
 
     # (New) Iterate through each 8ns time period template
     for template_idx, template in enumerate(template_list):
@@ -124,8 +123,8 @@ def load_interface_positions(template_list, num_sub_blocks=8):
             
                 matches = re.findall(regex, content)
                 if not matches:
-                    print(f"  > Error: Could not find 'Interface Position:' in {filepath}")
-                    sys.exit(f"  > Error: Could not find 'Interface Position:' in {filepath}")
+                    print(f"  > Error: Could not find 'interface_position=' in {filepath}")
+                    sys.exit(f"  > Error: Could not find 'interface_position=' in {filepath}")
             
                 # Assume the last match is the one needed
                 r_interface = float(matches[-1])

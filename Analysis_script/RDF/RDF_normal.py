@@ -34,7 +34,7 @@ plt.rc('legend', fontsize=SMALL_SIZE-1)  # legend fontsize
 plt.rc('figure', titlesize=BIG_SIZE)   # fontsize of the figure title
 
 #################### User Configuration Below ####################
-geo_path    = "/home/xiangdang/dpmd/bubble_ion/nacl/data" # Update this path
+geo_path    = "data" # Update this path
 trj_path    = "../MD"                                      # Update this path
 save_path   = "./"
 data_geo    = "D30L55N2_20NaOH_atomic.data"

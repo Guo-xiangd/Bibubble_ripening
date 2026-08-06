@@ -381,7 +381,7 @@ if __name__ == "__main__":
     # --- User Configuration ---
     
     # Trajectory filename
-    TRAJ_FILE = "/data/HOME_BACKUP/xiangdang/gpumd/biNBs/NaCl/002/0-8ns/COM_shift/centered_bubble1.lammpstrj"
+    TRAJ_FILE = "data/biNBs/NaCl/002/0-8ns/COM_shift/centered_bubble1.lammpstrj"
     
     # Cutoff Radius r1 (Na-O), Unit: Angstrom
     R1_NA_O = 3.2

@@ -32,10 +32,10 @@ def calculate_angle_between_vectors(v1, v2):
 def parse_log_file(log_path):
     """
     Parse the interface position from a single log file.
-    Uses regex to find 'Interface Position: X.XXXX'
+    Reads the machine-readable 'interface_position=<number>' record.
     """
     # Regex updated to match English
-    pattern = re.compile(r"Interface Position:\s*(\d+\.\d+)")
+    pattern = re.compile(r"(?m)^interface_position\s*=\s*([+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?)\s*$")
     
     if not os.path.exists(log_path):
         print(f"Warning: Log file does not exist, skipping: {log_path}")
@@ -47,7 +47,7 @@ def parse_log_file(log_path):
         if match:
             return float(match.group(1))
         
-    print(f"Warning: Could not find 'Interface Position:' in {log_path}")
+    print(f"Warning: Could not find 'interface_position=' in {log_path}")
     return None
 
 def determine_files_to_process(start_ns, end_ns, time_step_ns):
